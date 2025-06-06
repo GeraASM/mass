@@ -10,8 +10,8 @@
 </head>
 <body>
     <main class="main">
+        <div class="background"></div>
         <header class="mass container">
-            <div class="background"></div>
             <div class="mass-content">
                 <img class="logo" src="./assets/images/logo.svg" alt="Logo">
                 <div class="mass__texts">
@@ -27,41 +27,70 @@
                     <h2 class="form__title">Enter your details below</h2>
                     <div class="form__types">
                         <div class="form__type">
-                            <input class="input-radio" type="radio" name="system" id="metric"><label class="system" for="metric">Metric</label>
+                            <input class="input-radio" type="radio" name="system" id="metric" checked><label class="system" for="metric">Metric</label>
                         </div>
                         <div class="form__type">
                             <input class="input-radio" type="radio" name="system" id="imperial"><label class="system" for="imperial">Imperial</label>
                         </div>
                     </div>
-                    <div class="form__sizes">
+                    <div id="thisMetric" class="form__sizes">
                         <div class="form-content">
-                            <label class="form__system" for="height">Height</label>
+                            <label class="form__system" for="cm">Height</label>
                             <div class="form-input">
-                                <input class="input-number" type="number" name="height" id="height">
+                                <input placeholder="0" class="input-number" type="number" name="cm" id="cm">
                                 <p class="metric">cm</p>
                             </div>
                         </div>
                         <div class="form-content">
-                            <label for="weight" class="form__system">Weight</label>
+                            <label for="kg" class="form__system">Weight</label>
                             <div class="form-input">
-                                <input class="input-number" type="number" name="weight" id="weight">
+                                <input placeholder="0" class="input-number" type="number" name="kg" id="kg">
                                 <p class="metric">kg</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="thisImperial" style="display: none;" class="form__imperial">
+                        <div class="imperial-content">
+                            <div class="form-block">
+                                <p class="form__system">Height</p>
+                                <div class="form-input">
+                                    <input placeholder="0" class="input-number" type="number" name="ft" id="ft">
+                                    <p class="metric">ft</p>
+                                </div>
+                            </div>
+                            <div class="form-block">
+                                <div class="form-input">
+                                    <input placeholder="0" class="input-number" type="number" name="in" id="in">
+                                    <p class="metric">in</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="imperial-content">
+                            <div class="form-block">
+                                <p class="form__system">Weight</p>
+                                <div class="form-input">
+                                    <input placeholder='0' class="input-number" type="number" name="st" id="st">
+                                    <p class="metric">st</p>
+                                </div>
+                            </div>
+                            <div class="form-block">
+                                <div class="form-input">
+                                    <input placeholder="0" class="input-number" type="number" name="lbs" id="lbs">
+                                    <p class="metric">lbs</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </form>
                 <div class="result">
-                    <div class="result-content">
-                        <p class="result__is">Your BMI is...</p>
-                        <h2 class="result__score">23.4</h2>
-                    </div>
-                    <p class="result__text">Your BMI suggests your're a healthy weight. Your idal weight is between <span class="bmi">63.3kgs - 85.2kgs.</span></p>
+                    <h3 class="welcome">Welcome!</h3>
+                    <p class="result__text">Enter your height and weight and you'll see your BMI result here</p>
                 </div>
             </div>
         </header>
         <article class="what">
             <img class="what__img" src="./assets/images/image-man-eating.webp" alt="Man">
-            <div class="what__texts container">
+            <div class="what__texts">
                 <h2 class="what__title"> What your BMI result<br> means</h2>
                 <p class="what__text">A BMI range of 18.5 to 24.9 is considered a 'healthy weight.' Maintaining a 
     healthy weight may lower your chances of experiencing health issues later on, 
@@ -76,7 +105,7 @@
                 <img class="point__img" src="./assets/images/icon-eating.svg" alt="eating">
                 <div class="point__texts">
                     <h3 class="point__title">Healthy eating</h3>
-                    <p class="point__text">Healthy eating promotes weight control, disease prevention, <br>better digestion, 
+                    <p class="point__text">Healthy eating promotes weight control, disease prevention, better digestion, 
                         immunity, mental clarity, and mood.</p>
                 </div>
             </div>
@@ -84,7 +113,7 @@
                 <img class="point__img" src="./assets/images/icon-exercise.svg" alt="exercise">
                 <div class="point__texts">
                     <h3 class="point__title">Regular exercise</h3>
-                    <p class="point__text">Exercise improves fitness, aids weight control, elevates mood, <br>and reduces disease 
+                    <p class="point__text">Exercise improves fitness, aids weight control, elevates mood, and reduces disease 
         risk, fostering wellness and longevity.</p>
                 </div>
             </div>
@@ -92,7 +121,7 @@
                 <img class="point__img" src="./assets/images/icon-sleep.svg" alt="sleep">
                 <div class="point__texts">
                     <h3 class="point__title">Adequate sleep</h3>
-                    <p class="point__text"> Sleep enhances mental clarity, emotional stability, and physical <br> wellness, promoting 
+                    <p class="point__text"> Sleep enhances mental clarity, emotional stability, and physical wellness, promoting 
     overall restoration and rejuvenation.</p>
                 </div>
             </div>
@@ -151,24 +180,6 @@
             </div>
         </section>
     </main>
-
-    <!-- add score -->
-
-    <!-- Your BMI suggests you're -->
-    <!-- add classification -->
-    <!-- Your ideal weight is between  -->
-    <!-- add range -->
-    <!--
-
-
-    Muscle
-    
-
-    
-    
-
-    
-     -->
-
+    <script defer src="./script/main.js"></script>
 </body>
 </html>

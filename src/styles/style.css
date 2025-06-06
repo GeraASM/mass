@@ -57,8 +57,14 @@ body {
      font-family: "Inter", sans-serif;
 }
 
+.main {
+    padding-top: 32px;
+    padding-bottom: 32px; 
+}
+
 .container {
-    padding: var(--spacing-400) var(--spacing-300);
+    width: 90%;
+    margin-inline: auto;
 }
 
 .mass {
@@ -205,6 +211,7 @@ input[type='radio'], label  {display: inline-block; cursor: pointer;
     letter-spacing: -0.05em;
     color: var(--clr-blue-900);
     width: 100%;
+    cursor: pointer
  }
 
  .input-number:focus {
@@ -285,7 +292,8 @@ input[type=number] {
 
 
 .what__texts {
-    margin: 16px 0;
+    margin: 16px auto;
+    width: 90%;
 }
 
 .what__title {
@@ -314,6 +322,8 @@ input[type=number] {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-400);
+    width: 90%;
+    margin-inline: auto;
 }
 
 .point__img {
@@ -340,7 +350,7 @@ input[type=number] {
 }
 
 .limitations {
-    margin: 16px 0;
+    margin: 16px auto;
 }
 
 .limitations__texts {
@@ -396,15 +406,38 @@ input[type=number] {
     object-fit: contain;
 }
 
+.form__imperial {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.imperial-content {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+}
+
+.form-block {
+    flex-grow: 1;
+}
+
+.form-content:last-child {
+    margin-top: 8px;
+}
+
+.imperial-content:last-child {
+    margin-top: 8px;
+}
+
+.welcome {
+    font-size: 24px;
+}
+
 
 @media screen and (min-width: 768px) {
-
-    .container {
-        padding: var(--spacing-400) var(--spacing-500);
-    }
-
     .mass__text {
-        margin: var(--spacing-500) 0;
+        margin: var(--spacing-500) auto;
     }
 
     .form__types {
@@ -432,20 +465,22 @@ input[type=number] {
         margin: 0;
     }
 
+    /* esto se va a moficiar */
     .result {
         border-radius: 16px 150px 150px 16px / 16px 120px 120px 16px;
         display: flex;
-
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
     }
 
     .result-content {
         flex-grow: 1;
-        width: 50%;
     }
 
     .result__text {
         flex-grow: 1;
-        width: 50%;
     }
 
     .result__score {
@@ -454,8 +489,14 @@ input[type=number] {
 
     .what {
         display: flex;
-        justify-content: flex-start;
-        margin: 54px 0;
+        margin: 100px auto 54px;
+        width: 90%;
+        align-items: center;
+    }
+
+    .what__texts {
+        margin: 0;
+        width: fit-content;
     }
 
     .what__img {
@@ -491,6 +532,18 @@ input[type=number] {
         padding: 32px;
         margin-bottom: 8px;
     }
+
+    .form__imperial {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .imperial-content {
+        display: flex;
+        align-items: flex-end;
+        gap: 24px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -500,19 +553,30 @@ input[type=number] {
         --fnt-size-title-what: 48px;
     }
 
-    .container {
-        padding: 144px;
+    .background {
+        position: absolute;
+        width: 1000px;
+        height: 600px !important;
+    }
+
+    .mass {
+        padding-top: 144px;
+    }
+
+    .what {
+        width: 100%;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 72px;
     }
 
     .mass {
         display: flex;
-        justify-content: space-between;
         gap: 24px;
         align-items: flex-start;
     }
 
     .mass-content {
-        min-width: 465px;
         max-width: 465px;
         transform: translateY(-20%);
     }
@@ -527,7 +591,6 @@ input[type=number] {
 
     .mass__inputs {
         max-width: 564px;
-        min-width: 564px;
         height: auto;
         padding: var(--spacing-400);
     }
@@ -542,8 +605,7 @@ input[type=number] {
     } 
 
     .what {
-        align-items: center;
-        margin: 0;
+        padding-right: 100px;
     }
     
     .what__img {
@@ -553,33 +615,54 @@ input[type=number] {
         width: 564px;
     }
 
+    .what__texts {
+        max-width: 100%;
+        width: 100%;
+    }
+
     .what__text {
-        width: 465px;
+        width: 100%;
     }
 
     .points {
         flex-direction: row;
-        padding: 144px;
+        justify-content: space-evenly;
+        padding: 128px 100px 128px 128px;
     }
 
     .point {
         flex-direction: column;
         align-items: flex-start;
         width: 365px;
+        flex-grow: 1;
     }
+
+    .point__texts {
+        max-width: 100%;
+        width: 100%;
+        }
+
+
+    .point__text {
+        max-width: 100%;
+        width: 100%;
+        }
+
 
     .limitations__bmi {
         font-size: 48px;
     }
 
     .limitations__texts {
+        position: absolute;
+        top: 5%; left: 5%;
         text-align: start;
-        width: 564px;
+        width: 550px;
     }
 
     .limitations {
         position: relative;
-        width: 100%; height: 1000px; border: solid 1px red;
+        width: 100%; height: 1000px;
     }
 
     .limitations__features {
@@ -595,60 +678,35 @@ input[type=number] {
 
 
     .gender {
-        top: 10%; right: 20%;
+        top: 5%; right: 5%;
         width: 365px;
         height: 232px;
     }
 
     .age {
         width: 365px; height: 232px;
-        top: 35%; right: 40%;
+        top: 30%; right: 38%;
     }
 
     .muscle {
         width: 365px; height: 232px;
-        top: 35%; right: 12%;
+        top: 30%; right: 2%;
     }
 
     .pregnancy {
         width: 365px; height: 232px;
-        top: 60%; right: 50%;
+        top: 55%; right: 50%;
     }
 
     .race {
         width: 365px; height: 232px;
-        top: 60%; right: 22%;
-    }
-/* 
-    .limitations {
-        position: relative;
-        border: 1px solid blue;
-        display: flex;
-        justify-content: flex-start;
+        top: 55%; right: 12%;
     }
 
-    .limitations__texts {
-        text-align: start;
-        width: 564px;
+    .form__imperial {
+        gap: 24px;
     }
 
     
-
-    .limitations__features {
-        width: 960px;
-        height: 934px;
-        position: absolute;
-        width: 100%;
-        border: 1px solid red;
-    }
-
-    .limitations__feature {
-        width: 365px;
-        position: absolute;
-    }
-
-    .gender {
-        top: 0; right: 0;
-    } */
 
 }
